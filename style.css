@@ -35,7 +35,7 @@ button {
 }
 
 /* Navigation */
-nav {
+.nav {
   box-shadow: 0px 4px 5px -5px rgb(0, 0, 0, 0.2);
   height: 88px;
 }
@@ -64,6 +64,56 @@ nav {
 
 .nav__link:hover {
   text-decoration: underline;
+}
+
+.nav__menu {
+  background-color: transparent;
+  border: none;
+  font-size: 24px;
+  display: none;
+}
+
+/* Menu */
+
+.menu {
+  position: fixed;
+  background-color: #f8f8f8;
+  z-index: 99;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  visibility: hidden;
+  opacity: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 200ms ease;
+}
+
+.open .menu {
+  visibility: hidden;
+  opacity: 1;
+}
+
+.menu__close {
+  position: absolute;
+  top: 44px;
+  right: 32px;
+  background-color: transparent;
+  border: none;
+  font-size: 20px;
+}
+
+.menu__links {
+  display: flex;
+  font-display: column;
+  align-items: center;
+  gap: 32px;
+}
+
+.menu__link {
+  font-size: 24px;
 }
 
 /* header */
@@ -256,4 +306,120 @@ nav {
   font-size: 18px;
   padding: 8px;
   outline: none;
+  border: none;
+}
+
+/* Footer */
+
+footer {
+  background-color: #000;
+  color: white;
+}
+
+.footer__container {
+  padding: 40px 12px;
+  display: flex;
+  font-display: column;
+  align-items: center;
+  gap: 32px;
+}
+
+.footer__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  justify-content: center;
+}
+
+.footer__link {
+  color: white;
+  font-size: 18px;
+}
+
+/* LG screens */
+
+@media (max-width: 1024px) {
+  /* products */
+
+  .product__details__title {
+    font-size: 16px;
+  }
+
+  /* banner */
+  .banner__text {
+    padding: 0 80px;
+  }
+}
+
+/* MD Screens */
+
+@media (max-width: 768px) {
+  /* products */
+
+  .product {
+    width: calc(33.3333% - (32px / 3));
+  }
+
+  /* banner */
+  .banner__img {
+    display: none;
+  }
+
+  .banner__text {
+    width: 100%;
+  }
+}
+
+/* SM Screens */
+@media (max-width: 640px) {
+  /* navigation */
+
+  .nav__menu {
+    display: block;
+  }
+
+  .nav__links {
+    display: none;
+  }
+
+  /* header */
+
+  .header__title {
+    text-align: center;
+  }
+
+  .header__grid__title {
+    font-size: 24px;
+    left: 12px;
+  }
+
+  /* Products */
+  .product {
+    width: 48%;
+  }
+}
+
+/* Mobile devices */
+@media (max-width: 480px) {
+  /* header */
+
+  .header__grid__title {
+    left: 4px;
+    bottom: 4px;
+  }
+  /* products */
+
+  .product {
+    width: 100%;
+  }
+
+  /* Newsletter */
+
+  .newsletter__form {
+    flex-direction: column;
+  }
+
+  .newsletter_form__input {
+    text-align: center;
+  }
 }
