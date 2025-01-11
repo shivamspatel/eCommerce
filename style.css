@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Blinker:wght@100;200;300;400;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Blinker:wght@300;400;600;700;800;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
 * {
   padding: 0;
@@ -7,7 +7,7 @@
   font-family: Blinker;
 }
 
-/* global styles */
+/* Global Styles */
 
 a {
   color: black;
@@ -30,13 +30,14 @@ button {
   margin: 0 auto;
 }
 
-.color__primary {
+.color-primary {
   color: #d81414;
 }
 
 /* Navigation */
+
 .nav {
-  box-shadow: 0px 4px 5px -5px rgb(0, 0, 0, 0.2);
+  box-shadow: 0px 4px 5px -5px rgba(0, 0, 0, 0.2);
   height: 88px;
 }
 
@@ -46,6 +47,8 @@ button {
   justify-content: space-between;
   padding: 0 12px;
   max-width: 1280px;
+  margin: 0 auto;
+  height: 100%;
 }
 
 .nav__logo {
@@ -83,16 +86,16 @@ button {
   left: 0;
   right: 0;
   bottom: 0;
-  visibility: hidden;
-  opacity: 0;
-  display: flex;
   justify-content: center;
   align-items: center;
+  display: flex;
+  visibility: hidden;
+  opacity: 0;
   transition: 200ms ease;
 }
 
 .open .menu {
-  visibility: hidden;
+  visibility: visible;
   opacity: 1;
 }
 
@@ -107,7 +110,7 @@ button {
 
 .menu__links {
   display: flex;
-  font-display: column;
+  flex-direction: column;
   align-items: center;
   gap: 32px;
 }
@@ -116,7 +119,7 @@ button {
   font-size: 24px;
 }
 
-/* header */
+/* Header */
 
 .header__row {
   display: flex;
@@ -138,7 +141,7 @@ button {
   cursor: pointer;
 }
 
-.header__title {
+.header__grid__title {
   position: absolute;
   left: 24px;
   bottom: 24px;
@@ -164,7 +167,7 @@ button {
 
 .products__row {
   display: flex;
-  font-display: column;
+  flex-direction: column;
   gap: 44px;
 }
 
@@ -178,15 +181,16 @@ button {
   flex-wrap: wrap;
   gap: 16px;
 }
+
 .product {
-  width: calc(25% -12px);
+  width: calc(25% - 12px);
   border: 2px solid rgba(0, 0, 0, 0.2);
   cursor: pointer;
   transition: 200ms ease;
 }
 
 .product:hover {
-  border: 2px solid rgba(0, 0, 0, 0.6);
+  border-color: rgba(0, 0, 0, 0.6);
 }
 
 .product__img {
@@ -240,20 +244,19 @@ button {
 }
 
 .banner__text__btn {
-  background-color: black;
+  background-color: #000;
   border: 2px solid transparent;
-  border: none;
-  color: white;
+  color: #fff;
   font-size: 16px;
   font-weight: 700;
   margin-top: 20px;
   padding: 12px;
   text-transform: uppercase;
-  transition: 200mx ease;
+  transition: 200ms ease;
 }
 
 .banner__text__btn:hover {
-  border: 2px solid black;
+  border-color: #000;
   background-color: transparent;
   color: #000;
 }
@@ -263,7 +266,7 @@ button {
   object-fit: cover;
 }
 
-/* banner 2 */
+/* Banner 2 */
 
 .banner-2 {
   flex-direction: row-reverse;
@@ -288,7 +291,7 @@ button {
 }
 
 .newsletter__form {
-  font-size: 36px;
+  display: flex;
   gap: 8px;
 }
 
@@ -319,7 +322,7 @@ footer {
 .footer__container {
   padding: 40px 12px;
   display: flex;
-  font-display: column;
+  flex-direction: column;
   align-items: center;
   gap: 32px;
 }
@@ -336,43 +339,46 @@ footer {
   font-size: 18px;
 }
 
-/* LG screens */
+/* LG Screens - Laptops*/
 
 @media (max-width: 1024px) {
-  /* products */
+  /* Products */
 
   .product__details__title {
     font-size: 16px;
   }
 
-  /* banner */
+  /* Banner */
+
   .banner__text {
     padding: 0 80px;
   }
 }
 
-/* MD Screens */
+/* MD Screens - Tablets */
 
 @media (max-width: 768px) {
-  /* products */
+  /* Products */
 
   .product {
-    width: calc(33.3333% - (32px / 3));
+    width: 31%;
   }
 
-  /* banner */
-  .banner__img {
-    display: none;
-  }
+  /* Banner */
 
   .banner__text {
     width: 100%;
   }
+
+  .banner__img {
+    display: none;
+  }
 }
 
 /* SM Screens */
+
 @media (max-width: 640px) {
-  /* navigation */
+  /* Navigation */
 
   .nav__menu {
     display: block;
@@ -382,7 +388,7 @@ footer {
     display: none;
   }
 
-  /* header */
+  /* Header */
 
   .header__title {
     text-align: center;
@@ -394,20 +400,29 @@ footer {
   }
 
   /* Products */
+
   .product {
     width: 48%;
   }
+
+  /* Banner */
+
+  .banner__text {
+    padding: 0 40px;
+  }
 }
 
-/* Mobile devices */
+/* Mobile Devices */
+
 @media (max-width: 480px) {
-  /* header */
+  /* Header */
 
   .header__grid__title {
     left: 4px;
     bottom: 4px;
   }
-  /* products */
+
+  /* Products */
 
   .product {
     width: 100%;
@@ -419,7 +434,7 @@ footer {
     flex-direction: column;
   }
 
-  .newsletter_form__input {
+  .newsletter__form__input {
     text-align: center;
   }
 }
